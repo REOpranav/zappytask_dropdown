@@ -6,42 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dropdown task</title>
     <link rel="stylesheet" href="Dropdown.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Chivo:ital,wght@0,900;1,900&family=Lexend:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="toast hide"></div>
     <div class="totalDiv">
         <main>
-            <p id="showingSelectedInput">Select users</p>
-            <div id="cars">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                <label for="vehicle1"> I have a bike</label><br>
-
-                <input type="checkbox" id="vehicle2" name="veh  icle2" value="Car">
-                <label for="vehicle2"> I have a car</label><br>
-
-                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                <label for="vehicle3"> I have a boat</label><br>
-
-                <input type="checkbox" id="vehicle4" name="vehicle4" value="Mouse">
-                <label for="vehicle4"> I have a mouse</label><br>
-
-                <input type="checkbox" id="vehicle5" name="vehicle5" value="bottle">
-                <label for="vehicle5"> I have bottle</label><br>
-
-                <input type="checkbox" id="vehicle6" name="vehicle6" value="Light">
-                <label for="vehicle6"> I have a light</label><br>
-
-                <input type="checkbox" id="vehicle7" name="vehicle7" value="charger">
-                <label for="vehicle7"> I have a charger</label><br>
-            </div>
+            <header class="user_header">
+                <p id="showingSelectedInput">Select users</p>
+                <span class="remainingCount"></span>
+                <img src="Images/dropdownICon.png" alt="drop drown" class="dropDownIcon">
+            </header>
+            <div id="cars"></div>
             <footer>
                 <div>
-                    <button id="clearAll">Clear All</button>
+                    <button id="clearAll" onclick="clearAll()">Clear All</button>
                 </div>
                 <div>
-                    <button id="cancel">cancel</button>
-                    <button id="done">Done</button>
+                    <button id="cancel" onclick="cancel()">close</button>
+                    <button id="done" onclick="done()">Done</button>
                 </div>
             </footer>
         </main>
