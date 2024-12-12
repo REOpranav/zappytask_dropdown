@@ -10,11 +10,14 @@
     --borderRadius: 5px;
     --boder: 1px solid #ddd;
     --trasnsition: 0.2s all ease-in-out;
-    --font-family: "Open Sans", sans-serif;
+    --font-family: "Roboto", sans-serif;
+    --font-weight: 300;
     --font-optical-sizing: auto;
 }
 
 body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -38,7 +41,11 @@ body {
     min-height: 400px;
     max-height: 400px;
     font-family: var(--font-family);
-
+    font-weight: var(--font-weight);
+    border: 1px solid transparent;
+    transition: var(--trasnsition);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /* headers */
@@ -52,11 +59,11 @@ body {
     font-family: var(--font-family);
 }
 
-.user_header:hover{
-    border: 1px solid #00008B;
+.user_header:hover {
+    border: 1px solid #568fff;
 }
 
-.remainingCount{
+.remainingCount {
     padding: 10px;
 }
 
@@ -118,7 +125,9 @@ body {
     max-height: 300px;
     margin-top: 10px;
     overflow: auto;
-    transition: opacity 0.4s ease
+    transition: opacity 0.4s ease;
+    padding-right: 7px;
+    transition: 0.3p all ease-in-out;
 }
 
 #cars>p {
@@ -129,6 +138,13 @@ body {
     max-height: 50px;
     min-height: 50px;
     transition: var(--trasnsition);
+    border: var(--boder);
+    border-radius: var(--borderRadius);
+    margin-top: 4px;
+}
+
+#cars>p:hover{
+    border: 1px solid #b6b3b3;
 }
 
 #cars>p>img {
@@ -151,7 +167,7 @@ body {
 
 #cars>p:hover {
     cursor: pointer;
-    color: #a7a5a5;
+    color: #1d68ff;
 }
 
 #cars>p>label:hover {
@@ -196,33 +212,23 @@ footer #cancel {
 }
 
 footer #done {
-    border: 1px solid green;
-    color: green;
+    border: 1px solid #ddd;
     transition: var(--trasnsition);
 }
 
-footer #done:hover{
-    border: 1px solid rgb(0, 227, 0); 
-    color: rgb(0, 227, 0);;
+footer #cancel:hover {
+    color: rgb(234, 126, 126);
+    border-color: rgb(234, 126, 126);
 }
 
-footer #cancel:hover{
-  color: rgb(234, 126, 126);
-  border-color: rgb(234, 126, 126);
-}
-
-footer #clearAll:hover{
-    border: 1px solid #00008B;
-    color: #00008B;
-}
 
 .toast {
     position: fixed;
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f44949;
-    color: white;
+    border: 1px solid red;
+    color: red;
     padding: 15px;
     border-radius: 5px;
     opacity: 0;
