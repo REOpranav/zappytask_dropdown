@@ -104,14 +104,13 @@ inputs.forEach((val) => {
             checkedValues = checkedValues.filter(value => value !== val);
         }
 
-        if (checkedValues.length >= 3) {
+        if (checkedValues.length > 0) {
             showingSelectedInput.textContent = `${checkedValues.length} users picked`
         } else {
             showingSelectedInput.textContent = `Pick users`
         }
 
         buttonDisable()
-
     });
 });
 
@@ -151,7 +150,7 @@ function done() {
             showRemainigCount.textContent = `+${numberOfCount}`
         }
 
-        removeUserIconImg.addEventListener('click', (e) => {
+        removeUserIconImg.addEventListener('click', (e) => { // remove user code
             e.stopImmediatePropagation()
             val.checked = false
             checkedValues = checkedValues.filter(value => value !== val);
@@ -170,6 +169,7 @@ function done() {
                     showRemainigCount.textContent = `+${numberOfCount}`
                 }
             }
+            buttonDisable()
         })
     })
     inputItemheader.style.display = 'none';
@@ -186,7 +186,7 @@ function buttonDisable() {
         clearAllButton.disabled = false
         clearAllButton.style.color = 'darkblue'
         clearAllButton.style.border = '1px solid darkblue'
-    }else{
+    } else {
         doneButton.disabled = true
         doneButton.removeAttribute('style')
         clearAllButton.disabled = true
@@ -206,7 +206,7 @@ function clearAll() {
 }
 
 const elementCheckForMessage = (element) => {
-    if (checkedValues == 0) {
+    if (checkedValues <= 0) {        
         element.textContent = displayMessageUser
         inputItemheader.style.display = 'block';
         footer.style.display = 'flex';
